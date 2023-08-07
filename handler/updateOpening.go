@@ -8,6 +8,20 @@ import (
 	"github.com/go-playground/validator/v10"
 )
 
+//@BasePath /api/v1
+
+// @Summary Update opening
+// @Description Update a job opening
+// @Tags Openings
+// @Accept json
+// @Produce json
+// @Param id query string true "Opening Identification"
+// @Param opening body UpdateOpeningRequest true "Opening data to Update"
+// @Success 200 {object} UpdateOpeningsResponse
+// @Success 400 {object} ErrorResponse
+// @Success 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Router /opening [put]
 func UpdateOpeningHandler(ctx *gin.Context) {
 	request := UpdateOpeningRequest{}
 
